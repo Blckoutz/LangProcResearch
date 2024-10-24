@@ -1,0 +1,6 @@
+Goals: Automated Jeopardy creation (would like users to be able to pull topics to generate questions about the said topics that they want), Corpus creation, neural network/text prediction, END GOAL - Make the actual game playable
+Methods: Llama 3, PyTorch, maybe tensorflow, POS tagging 
+Research: progress finding of research, NLP steps, nltk toolkit
+
+
+ChatGPT refernce link for suggestion: https://chatgpt.com/share/671aad8e-1b90-8013-b934-2d7e1a482b9e
