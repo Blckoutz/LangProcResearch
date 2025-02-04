@@ -1,0 +1,13 @@
+Some links that could be useful: 
+
+https://www.turing.com/kb/natural-language-processing-function-in-ai
+https://pypi.org/project/nltk/
+https://rb.gy/mq5yq
+
+Ideas on what to do with text: https://www.educative.io/blog/natural-language-processing-with-python-guide
+Text generation wiht nltk and context free grammers: https://www.nltk.org/howto/generate.html
+https://www.nltk.org/api/nltk.grammar.html
+
+Question generation article https://link.springer.com/article/10.1007/s10639-020-10356-4
+
+https://chatgpt.com/share/671aad8e-1b90-8013-b934-2d7e1a482b9e
