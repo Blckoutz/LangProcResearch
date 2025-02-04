@@ -1,0 +1,33 @@
+jupyter lab 
+
+pip install Wikipedia-API
+api for wiki
+
+pip install lxml
+
+pip install httpx
+
+pip install pandas
+
+https://www.jcchouinard.com/wikipedia-api/
+https://www.jcchouinard.com/web-scraping-with-python-and-requests-html/
+
+
+
+--don't need these
+
+pip install sparqlwrapper
+
+pip install pydbpedia
+
+
+https://sparql.dev/article/SPARQL_query_examples_for_querying_DBpedia.html
+
+https://sparqlwrapper.readthedocs.io/en/latest/main.html
+
+##Not working
+https://pypi.org/project/Wikipedia-API/
+
+https://www.dbpedia.org/
+
+https://dbpedia.org/sparql/
