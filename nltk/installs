@@ -1,0 +1,11 @@
+python3
+pip --version
+
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
+pip install nltk
+
+python -m nltk.downloader all
+
+%import nltk
+%nltk.download()
