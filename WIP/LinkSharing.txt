@@ -1,2 +1,6 @@
 https://github.com/becxer/cnn-dailymail/
 kaggle.com
+
+two datasets to pull topics from
+https://www.kaggle.com/datasets/tunguz/200000-jeopardy-questions
+https://github.com/jwolle1/jeopardy_clue_dataset
