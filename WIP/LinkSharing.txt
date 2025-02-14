@@ -10,3 +10,5 @@ https://huggingface.co/docs/transformers/en/model_doc/t5#transformers.T5ForQuest
 
 maybe useful for training 
 https://huggingface.co/datasets/MuskumPillerum/General-Knowledge
+
+https://lambdalabs.com/blog/set-up-a-tensorflow-gpu-docker-container-using-lambda-stack-dockerfile
