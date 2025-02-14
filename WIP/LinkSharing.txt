@@ -5,5 +5,8 @@ two datasets to pull topics from
 https://www.kaggle.com/datasets/tunguz/200000-jeopardy-questions
 https://github.com/jwolle1/jeopardy_clue_dataset
 
+documentation for t5 model
+https://huggingface.co/docs/transformers/en/model_doc/t5#transformers.T5ForQuestionAnswering
+
 maybe useful for training 
 https://huggingface.co/datasets/MuskumPillerum/General-Knowledge
