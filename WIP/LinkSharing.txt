@@ -1,4 +1,5 @@
 https://github.com/becxer/cnn-dailymail/
+
 kaggle.com
 
 two datasets to pull topics from
@@ -12,3 +13,7 @@ maybe useful for training
 https://huggingface.co/datasets/MuskumPillerum/General-Knowledge
 
 https://lambdalabs.com/blog/set-up-a-tensorflow-gpu-docker-container-using-lambda-stack-dockerfile
+
+
+Tutorial huggingface that we watched together
+https://www.youtube.com/watch?v=T2fISIRogkg
