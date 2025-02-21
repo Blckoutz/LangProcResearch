@@ -9,3 +9,6 @@ python -m nltk.downloader all
 
 %import nltk
 %nltk.download()
+
+
+pip install t5

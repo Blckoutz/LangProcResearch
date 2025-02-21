@@ -17,3 +17,10 @@ https://lambdalabs.com/blog/set-up-a-tensorflow-gpu-docker-container-using-lambd
 
 Tutorial huggingface that we watched together
 https://www.youtube.com/watch?v=T2fISIRogkg
+
+Github for improved t5 model, might be worth looking into it
+https://github.com/google-research/t5x/blob/main/README.md
+
+Most viewed pages on wikipedia
+https://pageviews.wmcloud.org/topviews/?project=en.wikipedia.org&platform=all-access&date=last-month&excludes=
+
