@@ -1,0 +1,38 @@
+import csv
+
+def get_first_column_set_to_txt(csv_file_path, output_txt_path):
+    try:
+        # Create an empty set to store unique values
+        first_column_set = set()
+        
+        # Open and read the CSV file
+        with open(csv_file_path, 'r', newline='', encoding='utf-8') as file:
+            csv_reader = csv.reader(file)
+            
+            # Iterate through each row and add first column value to set
+            for row in csv_reader:
+                if row:  # Check if row is not empty
+                    first_column_set.add(row[0])
+        
+        # Write the set to a text file
+        with open(output_txt_path, 'w', encoding='utf-8') as txt_file:
+            for item in first_column_set:
+                txt_file.write(f"{item}\n")  # Write each item on a new line
+                
+        print(f"Set successfully written to '{output_txt_path}'")
+        return first_column_set
+    
+    except FileNotFoundError:
+        print(f"Error: File '{csv_file_path}' not found.")
+        return set()
+    except Exception as e:
+        print(f"Error occurred: {str(e)}")
+        return set()
+
+# Example usage
+csv_file = "output.csv"  # Replace with your CSV file path
+output_txt = "output.txt"  # Name of the output text file
+result = get_first_column_set_to_txt(csv_file, output_txt)
+
+# Print the resulting set
+print("Unique values in first column:", result)
