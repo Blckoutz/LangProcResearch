@@ -1,0 +1,109 @@
+import csv
+import requests
+import os
+from lxml import html
+
+def search_and_fetch_summary(topic):
+    """Search Wikipedia for a topic and return parsed HTML summary of the best match (index 0)."""
+    search_url = 'https://en.wikipedia.org/w/api.php'
+
+    search_params = {
+        'action': 'query',
+        'format': 'json',
+        'list': 'search',
+        'utf8': 1,
+        'srsearch': topic
+    }
+
+    try:
+        search_data = requests.get(search_url, params=search_params, timeout=5).json()
+        search_results = search_data.get('query', {}).get('search', [])
+        if not search_results:
+            return f"No Wikipedia article found for topic: {topic}"
+
+        best_match_title = search_results[0]['title']
+
+        parse_params = {
+            'action': 'parse',
+            'format': 'json',
+            'page': best_match_title,
+            'prop': 'text',
+            'redirects': ''
+        }
+
+        response = requests.get(search_url, params=parse_params, timeout=5).json()
+        raw_html = response['parse']['text']['*']
+        document = html.document_fromstring(raw_html)
+
+        text = ''
+        for p in document.xpath('//p'):
+            paragraph = p.text_content().strip()
+            if paragraph:  # Only include non-empty paragraphs
+                text += paragraph + '\n'
+
+        return text.strip() if text.strip() else f"No extractable summary found for {best_match_title}."
+
+    except requests.RequestException as e:
+        return f"Request error while fetching summary for {topic}: {e}"
+    except Exception as e:
+        return f"Unexpected error for {topic}: {e}"
+
+def get_first_column_set(csv_file_path, skip_header=True):
+    """Read the first column of a CSV file into a set of unique values."""
+    try:
+        first_column_set = set()
+        with open(csv_file_path, 'r', newline='', encoding='utf-8') as file:
+            csv_reader = csv.reader(file)
+            if skip_header:
+                next(csv_reader, None)  # Skip header row
+            for row in csv_reader:
+                if row:  # Check if row is not empty
+                    first_column_set.add(row[0])
+        return first_column_set
+    except FileNotFoundError:
+        print(f"Error: File '{csv_file_path}' not found.")
+        return set()
+    except Exception as e:
+        print(f"Error occurred: {str(e)}")
+        return set()
+
+
+
+def process_csv(csv_filename, sasv_filename, processed_filename):
+    """Process topics from CSV, fetch summaries, and save to new CSV."""
+    try:
+        # Read topics from CSV
+        topics = get_first_column_set(csv_filename)
+        if not topics:
+            print("No topics found in the CSV file.")
+            return
+
+        # Fetch summaries for each topic
+        new_summaries = []
+        for topic in topics:
+            print(f"Fetching summary for: {topic}")
+            summary = search_and_fetch_summary(topic)
+            new_summaries.append(summary)
+        
+        # Pair the lists
+        paired_data = list(zip(topics, new_summaries))
+        
+        # Write to output CSV
+        with open(sasv_filename, 'w', newline='', encoding='utf-8') as csv_file:
+            csv_writer = csv.writer(csv_file)
+            csv_writer.writerow(['Topic', 'Summary'])
+            for topic, summary in paired_data:
+                # Truncate summary if too long to avoid CSV issues
+                summary = summary[:1000] if len(summary) > 1000 else summary
+                csv_writer.writerow([topic, summary])
+            print(f"Data successfully written to '{sasv_filename}'")
+        
+             
+        return paired_data
+    
+    except Exception as e:
+        print(f"Error in process_csv: {str(e)}")
+        return []
+
+# Call the main function
+process_csv("test.csv", "wikiArticles.csv", "unique_topics.txt")
