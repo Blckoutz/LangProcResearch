@@ -1,0 +1,19 @@
+
+# Linux Installation Instructions
+1. Install Python (if not already installed):
+   ```bash
+   sudo apt-get install python3
+   ```
+
+2. Install system dependencies for lxml:
+   ```bash
+   sudo apt-get update
+   sudo apt-get install libxml2-dev libxslt-dev
+   ```
+
+3. Install the necessary Python packages:
+   ```bash
+   pip install requests
+   pip install lxml
+   pip install pandas
+   ```

@@ -1,0 +1,12 @@
+
+# Windows Installation Instructions
+1. Install Python (if not already installed):
+   - Download Python from https://www.python.org/downloads/
+   - Ensure to add Python to the system PATH during installation.
+
+2. Install the necessary Python packages:
+   ```bash
+   pip install requests
+   pip install lxml
+   pip install pandas
+   ```
