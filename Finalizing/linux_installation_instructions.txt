@@ -1,19 +1,24 @@
+1. Install Python 3.7 or higher (Make sure to add Python to PATH during installation)
+   - Use your package manager to install Python (e.g., apt for Ubuntu/Debian):
+     sudo apt update
+     sudo apt install python3 python3-pip
 
-# Linux Installation Instructions
-1. Install Python (if not already installed):
-   ```bash
-   sudo apt-get install python3
-   ```
+2. Install the required Python packages:
+   - Open a terminal and run the following:
+     pip install requests
+     pip install transformers
+     pip install torch
+     pip install sentencepiece
+     pip install tqdm
 
-2. Install system dependencies for lxml:
-   ```bash
-   sudo apt-get update
-   sudo apt-get install libxml2-dev libxslt-dev
-   ```
+3. Install additional dependencies for transformers (if not installed already):
+   - For running the script, you need to have both `torch` and `transformers` installed. If not installed, run the following:
+     pip install torch
+     pip install transformers
 
-3. Install the necessary Python packages:
-   ```bash
-   pip install requests
-   pip install lxml
-   pip install pandas
-   ```
+4. Verify installations:
+   - To check if everything is installed correctly, run:
+     python3 -c "import transformers; import torch; import requests; import sentencepiece"
+
+5. Run the script:
+   - Once the dependencies are installed, you can run your Python script as usual.

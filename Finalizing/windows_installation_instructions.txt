@@ -1,12 +1,22 @@
+1. Install Python 3.7 or higher (Make sure to add Python to PATH during installation)
+   - Download from: https://www.python.org/downloads/
 
-# Windows Installation Instructions
-1. Install Python (if not already installed):
-   - Download Python from https://www.python.org/downloads/
-   - Ensure to add Python to the system PATH during installation.
+2. Install the required Python packages:
+   - Open a command prompt (cmd) or PowerShell and run the following:
+     pip install requests
+     pip install transformers
+     pip install torch
+     pip install sentencepiece
+     pip install tqdm
 
-2. Install the necessary Python packages:
-   ```bash
-   pip install requests
-   pip install lxml
-   pip install pandas
-   ```
+3. Install additional dependencies for transformers (if not installed already):
+   - For running the script, you need to have both `torch` and `transformers` installed. If not installed, run the following:
+     pip install torch
+     pip install transformers
+
+4. Verify installations:
+   - To check if everything is installed correctly, run:
+     python -c "import transformers; import torch; import requests; import sentencepiece"
+
+5. Run the script:
+   - Once the dependencies are installed, you can run your Python script as usual.
