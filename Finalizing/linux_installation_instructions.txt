@@ -22,3 +22,6 @@
 
 5. Run the script:
    - Once the dependencies are installed, you can run your Python script as usual.
+
+   TLDR, run this command for all the packages:
+   pip install torch torchvision torchaudio transformers datasets tqdm requests lxml sentencepiece
