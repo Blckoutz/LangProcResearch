@@ -24,4 +24,8 @@
    - Once the dependencies are installed, you can run your Python script as usual.
 
    TLDR, run this command for all the packages:
-   pip install torch torchvision torchaudio transformers datasets tqdm requests lxml sentencepiece
+      pip install torch torchvision torchaudio transformers datasets tqdm requests lxml sentencepiece
+
+   to run the trainer in the background without having it stop when you disconnect from the SSH and to be able to overwrite past logs (in bash put this):
+      nohup python MasterScript.py > nohup.out 2>&1 &
+
